@@ -18,11 +18,11 @@ export const getUsers = async (req, res) => {
   }
 };
 
-export const deleteEsha = async (req, res) => {
-  try {
-    const result = await User.deleteMany({ name: "Esha" });
-    res.json({ message: "Deleted successfully", deletedCount: result.deletedCount });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
+// export const deleteEsha = async (req, res) => {
+//   try {
+//     const result = await User.deleteMany({ name: "Esha" });
+//     res.json({ message: "Deleted successfully", deletedCount: result.deletedCount });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
