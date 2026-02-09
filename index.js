@@ -4,13 +4,15 @@ import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
 app.use(express.json()); 
+app.use( userRoutes);
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/school")
   .then(() => console.log("DB connected!"))
   .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("MVC API running");
+  res.send("server running !");
 });
 
 app.use("/users", userRoutes);

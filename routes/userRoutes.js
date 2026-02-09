@@ -1,12 +1,15 @@
 import express from "express";
-import { createUser, getUsers, deleteEsha } from "../controllers/userController.js";
+import { createUser, getUsers, deleteEsha, deleteUsersByName } from "../Controllers/userController.js";
 
 const router = express.Router();
 
 router.post("/", createUser);
+router.get("/users", getUsers);
 
-router.get("/", getUsers);
+// DELETE fixed Esha users
+router.delete("/users/esha", deleteEsha);
 
-router.delete("/esha", deleteEsha);
+// DELETE users dynamically by name
+router.delete("/users/:name", deleteUsersByName);
 
 export default router;
